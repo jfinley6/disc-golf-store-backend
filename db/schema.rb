@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_15_182132) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_21_172914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "discs", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "category"
+    t.string "speed"
+    t.string "glide"
+    t.string "turn"
+    t.string "fade"
+    t.string "stability"
+    t.string "flight_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture_url", default: "https://m.media-amazon.com/images/I/61+1Z62KXKL._AC_SX425_.jpg"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
