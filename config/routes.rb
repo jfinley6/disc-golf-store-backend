@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   patch '/picture/:id', to: 'registrations#picture'
 
   get 'home_page', to: 'discs#home_page_discs'
+  get 'manufacturers', to: 'discs#manufacturers'
+  get '/category/:category_slug/:page', to: 'discs#all_discs'
 end
