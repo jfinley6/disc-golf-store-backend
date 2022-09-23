@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'home_page', to: 'discs#home_page_discs'
   get 'manufacturers', to: 'discs#manufacturers'
   get '/category/:category_slug/:page', to: 'discs#all_discs_category'
+  get '/all/:page', to: 'discs#all_discs'
 end
