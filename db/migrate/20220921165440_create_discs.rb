@@ -4,10 +4,10 @@ class CreateDiscs < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :brand
       t.string :category
-      t.string :speed
-      t.string :glide
-      t.string :turn
-      t.string :fade
+      t.integer :speed
+      t.integer :glide
+      t.integer :turn
+      t.integer :fade
       t.string :stability
       t.string :flight_path
 
