@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get '/category/:category_slug/:page', to: 'discs#all_discs_category'
   get '/all/:page', to: 'discs#all_discs'
   get 'sort/:category_slug/:sort/:page', to: 'discs#sorted_discs'
+
+  get :shopping_cart, to: "sessions#shopping_cart"
 end

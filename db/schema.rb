@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_22_221347) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_25_002419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_22_221347) do
     t.string "picture_url", default: "https://m.media-amazon.com/images/I/61+1Z62KXKL._AC_SX425_.jpg"
     t.string "category_slug"
     t.float "price"
+  end
+
+  create_table "shopping_carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "disc_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
