@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
                     price += Disc.find(t.disc_id).price
                 end
             end
-            render json: {discs: array, total_price: price}
+            render json: {discs: array, total_price: price, total_items: @shopping_cart.length}
         else
             render json: {shopping_cart: false}
         end
