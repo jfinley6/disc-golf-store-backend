@@ -2,8 +2,7 @@ class DiscsController < ApplicationController
 
 
     def home_page_discs
-        discs = Disc.all.sample(8)
-        render json: discs  
+        render json: Disc.daily_discs
     end
 
     def manufacturers
