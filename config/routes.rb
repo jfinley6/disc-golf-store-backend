@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get 'sort/:category_slug/:sort/:page', to: 'discs#sorted_discs'
 
   get :shopping_cart, to: "sessions#shopping_cart"
+
+  post 'new/:user_id/:disc_id', to: "shopping_cart#new"
 end
