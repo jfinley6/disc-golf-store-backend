@@ -1,3 +1,3 @@
 class Disc < ApplicationRecord
-    belongs_to :shopping_cart
+    has_and_belongs_to_many :shopping_cart
 end
