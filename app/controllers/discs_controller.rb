@@ -9,18 +9,6 @@ class DiscsController < ApplicationController
         render json: Disc.select('distinct(brand)').order(:brand)
     end
 
-    # def all_discs_category
-    #     discs = Disc.where(:category_slug => params[:category_slug]).page(params[:page])
-    #     total_discs = Disc.where(:category_slug => params[:category_slug])
-    #     render json: {discs: discs, total: total_discs.length}
-    # end
-
-    # def all_discs
-    #     discs = Disc.order(:name).page(params[:page])
-    #     total_discs = Disc.all
-    #     render json: {discs: discs, total: total_discs.length}
-    # end
-
     def sorted_discs
         if params[:category_slug] == "all"
             discs = Disc.order(params[:sort]).page(params[:page])
