@@ -5,11 +5,13 @@ class RegistrationsController < ApplicationController
             username: params['user']['username'],
             email: params['user']['email'],
             password: params['user']['password'],
-            password_confirmation: params['user']['password_confirmation']
+            password_confirmation: params['user']['password_confirmation'],
+            picture: "https://mystyle-flydiscs.s3.amazonaws.com/design/593946/blob_web_image.jpg"
         )
 
         if user
             session[:user_id] = user.id
+            UserMailer.user_created(user.email).deliver_later
             render json: {
                 status: :created,
                 user: user
