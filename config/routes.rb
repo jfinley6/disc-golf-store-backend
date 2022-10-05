@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :feedbacks
   resources :discs
   resources :comments
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   get '/category/:category_slug/:page', to: 'discs#all_discs_category'
   get '/all/:page', to: 'discs#all_discs'
   get 'sort/:category_slug/:sort/:page', to: 'discs#sorted_discs'
+  post 'order/:user_id/:orderId/:price', to: "sessions#create_order"
 
   get :shopping_cart, to: "sessions#shopping_cart"
 
