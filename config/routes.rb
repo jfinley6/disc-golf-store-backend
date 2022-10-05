@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/all/:page', to: 'discs#all_discs'
   get 'sort/:category_slug/:sort/:page', to: 'discs#sorted_discs'
   post 'order/:user_id/:orderId/:price', to: "sessions#create_order"
+  get 'user_orders/:user_id', to: "orders#user_orders"
 
   get :shopping_cart, to: "sessions#shopping_cart"
 
