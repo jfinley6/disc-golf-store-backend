@@ -19,6 +19,11 @@ class SessionsController < ApplicationController
 # , only: [:id, :name, :brand, :picture_url, :price]
     end
 
+    def create_order
+        order = Order.create(:user_id => params[:user_id], :price => params[:price], :identifier => params[:orderId], status: "pending")
+        ShoppingCart.delete_all
+    end
+
     def set_current_user
         if session[:user_id]
             @current_user = User.find(session[:user_id])
